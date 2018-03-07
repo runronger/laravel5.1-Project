@@ -96,7 +96,7 @@
                         icon: 1,
                         time: 2000
                     });
-                    window.location.href = '{{url('/admin/goods/index')}}';
+                    window.location.href = '{{url('/admin/index')}}';
                 }
             },
             error: function (e) {
