@@ -22,11 +22,20 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::post('/doLogin','LoginController@doLogin');
 });
 
+Route::group(['middleware'=>['admin'],'prefix'=>'admin','namespace'=>'Admin'],function (){
+    //进入后台首页
+    Route::get('/index','IndexController@index');
+});
+
+
 //member模块
 Route::group(['prefix'=>'member','namespace'=>'Member'],function (){
     //会员登录
     Route::get('/login','LoginController@login');
 });
 
-
-
+//API路由
+Route::group(['prefix'=>'api','namespace'=>'Api'],function (){
+    //进入后台首页
+    Route::post('/index','PublicController@index');
+});

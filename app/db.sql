@@ -13,3 +13,18 @@ create table `lar_admin`(
     `update_at` timestamp not null default current_timestamp comment '升级时间',
     primary key(`id`)
 )engine=InnoDB auto_increment=1 default charset=utf8;
+
+ALTER TABLE `lar_admin`
+ADD COLUMN `passWord`  varchar(255) NOT NULL AFTER `loginName`;
+
+ALTER TABLE `lar_admin`
+    CHANGE COLUMN `status` `workStatus`  tinyint(1) NOT NULL DEFAULT 1 COMMENT '状态' AFTER `phone`;
+
+ALTER TABLE `lar_admin`
+ADD COLUMN `lastIP`  varchar(30) NOT NULL AFTER `workStatus`;
+
+ALTER TABLE `lar_admin`
+ADD COLUMN `lastTime`  datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP AFTER `lastIP`;
+
+ALTER TABLE `lar_admin`
+CHANGE COLUMN `update_at` `updated_at`  timestamp NOT NULL DEFAULT current_timestamp() COMMENT '升级时间' AFTER `created_at`;
