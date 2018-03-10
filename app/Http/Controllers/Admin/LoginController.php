@@ -58,7 +58,7 @@ class LoginController extends Controller
                     }else{
                         $res = Admin::where('loginName',$name)->update(['lastIP' => $request->ip(), 'lastTime' => Carbon::now()]);
                         if($res){
-                            session()->put('ADMIN_PASS',$result);
+                            $request->session()->put('ADMIN_PASS',$result);
                             return AjaxReturn('登录成功！', 3);
                         }
                     }

@@ -22,7 +22,7 @@ class CheckAdmin
     public function handle($request,Closure $next)
     {
         if(is_null(session('ADMIN_PASS'))){
-            return redirect(url('/'))->with('message','请先登录');
+            return redirect(url('/admin/login'))->with('message','请先登录');
         }else{
             return $next($request);
         }
