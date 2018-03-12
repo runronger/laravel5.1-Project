@@ -107,7 +107,7 @@
                                         <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 个人中心
                                         </button>
                                         <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i>
-                                            退出
+                                            <a href="{{asset('/admin/signOut')}}" >退出</a>
                                         </button>
                                     </div>
                                 </div>
@@ -292,6 +292,10 @@
         </div>
         <!-- Main Content -->
         <div class="container-fluid">
+            @if(session('message'))
+                <span class="help-block text-center">{{ session('message') }}</span>
+            @endif
+
             @section('content')
                 @show
         </div>
