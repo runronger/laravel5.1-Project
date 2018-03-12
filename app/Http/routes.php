@@ -25,6 +25,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
 Route::group(['middleware'=>['admin'],'prefix'=>'admin','namespace'=>'Admin'],function (){
     //进入后台首页
     Route::get('/index','IndexController@index');
+    //退出
+    ROute::get('/signOut','LoginController@signOut');
 });
 
 
