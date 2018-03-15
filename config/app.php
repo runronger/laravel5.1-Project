@@ -198,4 +198,10 @@ return [
 
     ],
 
+    'translator'=>[
+        'name'=>'My-translator',
+        'key1'=>'cec1137228da4d55bebc016392c1a800',
+        'key2'=>'efd3470963a646e1aa3a24d572a65503'
+    ],
+
 ];
